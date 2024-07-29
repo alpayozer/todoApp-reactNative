@@ -7,7 +7,11 @@ import styles from './TodoItem.style';
 const TodoItem = ({todo}) => {
   const dispatch = useDispatch();
   const [isEditing, setIsEditing] = useState(false);
-  const [editedTodo, setEditedTodo] = useState(todo);
+  const [editedTodo, setEditedTodo] = useState(todo.title);
+
+  console.log(todo, 'gelen todo');
+  console.log(editedTodo, 'editedTodo todo');
+
   const handleUpdate = () => {
     dispatch(
       updateTodo({
